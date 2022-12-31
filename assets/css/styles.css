@@ -1,5 +1,5 @@
 /*==================== GOOGLE FONTS ====================*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;
@@ -23,7 +23,7 @@
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
   /*========== Font and typography ==========*/
-  --body-font: "Poppins", sans-serif;
+  --body-font: 'Poppins', sans-serif;
 
   /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
   --big-font-size: 2rem;
@@ -301,7 +301,6 @@ img {
 }
 
 .home__blob-img {
-  /* margin-bottom: 100px; */
   position: relative;
   width: 300px;
   border-radius: 50%;
@@ -771,7 +770,7 @@ img {
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  content: "";
+  content: '';
 }
 
 .swiper-portfolio-icon {
