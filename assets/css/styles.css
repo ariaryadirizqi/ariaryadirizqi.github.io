@@ -301,7 +301,7 @@ img {
 }
 
 .home__blob-img {
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
   position: relative;
   width: 300px;
   border-radius: 50%;
