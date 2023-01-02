@@ -943,12 +943,14 @@ img {
 #status.success {
   background-color: var(--input-color);
   animation: status 4s ease forwards;
+  -webkit-animation: status 4s ease forwards;
 }
 
 #status.error {
   background-color: rgb(250, 129, 92);
   color: white;
   animation: status 4s ease forwards;
+  -webkit-animation: status 4s ease forwards;
 }
 
 @keyframes status {
