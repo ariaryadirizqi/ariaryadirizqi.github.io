@@ -45,7 +45,7 @@
             <a href="#portfolio" class="nav__link"> <i class="uil uil-scenery nav__icon"></i> Portfolio </a>
           </li>
           <li class="nav__item">
-            <a href="#contact" class="nav__link"> <i class="uil uil-message nav__icon"></i> Contactme </a>
+            <a href="#contact" class="nav__link"> <i class="uil uil-message nav__icon"></i> Contact Me </a>
           </li>
         </ul>
         <i class="uil uil-times nav__close" id="nav-close"></i>
@@ -990,28 +990,28 @@
 
             <div>
               <h3 class="contact__title">Location</h3>
-              <span class="contact__subtitle">Bekasi</span>
+              <span class="contact__subtitle">Jl. Raya Buni Bakti, Bunibakti, Kec. Babelan, Kabupaten Bekasi, Jawab Barat 17610</span>
             </div>
           </div>
         </div>
-        <form name="ari-contact-form" class="contact__form grid">
+        <form name="ari-contact-form" class="contact__form grid" autocomplete="off">
           <div class="contact__inputs grid">
             <div class="contact__content">
               <label class="contact__label">Name</label>
-              <input type="text" class="contact__input" name="name" />
+              <input type="text" class="contact__input" name="name" required />
             </div>
             <div class="contact__content">
               <label class="contact__label">Email</label>
-              <input type="email" class="contact__input" name="email" />
+              <input type="email" class="contact__input" name="email" required />
             </div>
           </div>
           <div class="contact__content">
             <label class="contact__label">Project</label>
-            <input type="text" class="contact__input" name="project" />
+            <input type="text" class="contact__input" name="project" required />
           </div>
           <div class="contact__content">
             <label class="contact__label">Message</label>
-            <textarea cols="0" rows="7" class="contact__input" name="message"></textarea>
+            <textarea cols="0" rows="7" class="contact__input" name="message" required></textarea>
           </div>
 
           <div>
@@ -1020,7 +1020,7 @@
               <i class="uil uil-message button__icon"></i>
             </button>
               
-            <!-- <div id="status"></div> -->
+            <div id="status"></div>
           </div>
         </form>
       </div>
@@ -1082,13 +1082,18 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwYNHwHHFu5EdV5IQmq7MG8Uvs3XZNaL_5DegVle7jvzJhED_Gt1dVjzJRbp73VJ9_mnQ/exec';
     const form = document.forms['ari-contact-form'];
     const btnKirim = document.querySelector('.btn-kirim');
-
+    
     form.addEventListener('submit', (e) => {
     e.preventDefault();
+      var status = document.getElementById("status");
     fetch(scriptURL,  { method: 'POST', body: new FormData(form) })
     .then((response) => {
       // reset formnya
+      if (response.ok) {
+        status.classList.add("success");
+        status.innerHTML = "Thanks for your submission!";
       form.reset();
+      }
       console.log('Success!', response);
     })
     .catch((error) => console.error('Error!', error.message))
